@@ -1,54 +1,139 @@
-# React + TypeScript + Vite
+# 🌤️ Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek and responsive weather dashboard built with **React**, **Vite**, and **Tailwind CSS**. It visualizes real-time, hourly, weekly, and historical weather data using clean components and custom logic.
 
-Currently, two official plugins are available:
+## 🔗 Live Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check out the live demo: [https://weather-app-dusky-seven-79.vercel.app/](https://weather-app-dusky-seven-79.vercel.app/)
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Current Weather Overview**  
+  Shows live conditions: temperature, UV index, wind speed/direction, pressure, humidity, and more.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Hourly Forecast**  
+  Displays the next 24 hours of weather using hourly snapshots.
+
+- **3-Day Forecast**  
+  Provides an interactive summary of the upcoming week’s weather.
+
+- **Historical Weather Insights**  
+  Shows the last 3 days of historical weather with icon estimation via custom logic.
+
+- **Day Selection**  
+  Click a forecast day to view detailed weather in the summary panel.
+
+- **Responsive UI**  
+  Built with Tailwind CSS for mobile-first design and graceful scaling.
+
+- **Loader Handling**  
+  Displays a loading animation during async fetches for a smoother experience.
+
+---
+
+## 🛠️ Tech Stack
+
+- **React + Vite** for a blazing-fast dev/build workflow
+- **Tailwind CSS** for utility-first styling
+- **Moment.js** for time formatting
+- **Vitest** for unit testing
+- **Weather APIs** for real-time and historical data
+
+---
+
+## 📦 Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/your-username/weather-app.git
+cd weather-app
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+### 3. Configure environment variables
+
+Create a `.env` file in the root of the project with the following:
+
+```env
+VITE_WEATHER_API_KEY=your_weather_api_key
+VITE_BASE_URL=https://api.weatherbit.io/v2.0/
+```
+
+> - `VITE_WEATHER_API_KEY`: Your API key from a weather provider (e.g. Weatherbit, OpenWeather).
+> - `VITE_BASE_URL`: The base URL of the API service you are using (e.g., `https://api.weatherbit.io/v2.0`).
+
+---
+
+## 🔧 Running the App Locally
+
+```bash
+npm run dev
+```
+
+Visit [http://localhost:5173](http://localhost:5173) to view the app.
+
+---
+
+## 🧪 Running Tests
+
+```bash
+npm run test
+```
+
+Includes unit tests for:
+- Data hooks
+- Weather estimation utils
+- Core components (with mocking)
+
+---
+
+## 📁 Directory Structure
+
+```
+/
+├── src/
+│   ├── components/       # UI widgets (cards, info panels, etc.)
+│   ├── hooks/            # Weather data-fetching hooks
+│   ├── utils/            # Logic to estimate rain, weather codes
+│   ├── types/            # TypeScript models
+│   └── App.tsx           # Main component
+├── public/               # Static assets (icons, manifest, etc.)
+├── .env                  # Local environment variables
+├── vite.config.ts        # Vite config
+└── index.html            # Entry HTML
+```
+
+---
+
+## ☁️ Deployment
+
+### 🚀 Vercel
+
+1. Push your code to GitHub
+2. Connect the repo on [vercel.com](https://vercel.com)
+3. Set your environment variables in **Project Settings → Environment Variables**
+4. Deploy!
+
+No manual configuration needed — Vercel auto-detects Vite projects.
+
+---
+
+## 🔮 Roadmap
+
+- 🌙 Dark mode toggle  
+- 🌍 Multi-language support (i18n)  
+- 📍 City search and location-based results  
+- 📡 Offline support with service workers  
+
+---
+
+## 📄 License
+
+MIT License © [Your Name or Organization]

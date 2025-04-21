@@ -12,7 +12,7 @@ export const CurrentWeatherInfo: React.FC<CurrentWeatherInfoProps> = ({ weather,
         <section className='py-4'>
             <div className='lg:flex justify-between'>
                 <div className='flex items-center justify-center'>
-                    <img src={`/icons/${weather?.weather?.icon}.svg`} className='h-40 w-40 max-md:-mr-8 max-md:-ml-8' />
+                    <img src={`/icons/${weather?.weather?.icon}.svg`} className='h-40 w-40 max-md:-mr-2 max-md:-ml-8' />
                     <div className='lg:ml-4'>
                         <h1 className='lg:text-8xl text-6xl font-bold text-slate-900'>{weather?.temp?.toFixed(0)}°</h1>
                         <p className='mt-2 text-gray-500 '>{weather?.weather?.description}</p>
