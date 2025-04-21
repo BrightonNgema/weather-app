@@ -6,7 +6,6 @@ import { WeatherDayCard,  CurrentWeatherInfo, Loader, WeatherInfoCard, WeatherHo
 import { WeatherType } from './types/weather.types';
 import { DailyForecast } from './types/dailyForecast.type';
 import './App.css'
-import moment from 'moment';
 
 function App() {
   const { weather , loading} =  useGetCurrentWeather();
