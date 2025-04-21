@@ -34,9 +34,9 @@ function App() {
           <WeatherInfoCard title="UV index" value={displayWeather?.uv} icon={"uv"}/>
           <WeatherInfoCard title="Wind" value={`${displayWeather?.wind_spd}km/h`} icon={"wind"} imageClassName={windDirection}/>
           <WeatherInfoCard title="Pressure" value={`${displayWeather?.pres} hPa`} icon={"pressure"}/>
-          <WeatherInfoCard title="Sunrise" value={displayWeather.sunrise ?? "--"}  icon={"sunrise"}/>
+          <WeatherInfoCard title="Sunrise" value={displayWeather?.sunrise ?? "--"}  icon={"sunrise"}/>
           <WeatherInfoCard title="Humidity" value={`${displayWeather?.rh}%`} icon={"humidity"}/>
-          <WeatherInfoCard title="Sunset" value={displayWeather.sunset ?? "--"} icon={"sunset"}/>
+          <WeatherInfoCard title="Sunset" value={displayWeather?.sunset ?? "--"} icon={"sunset"}/>
           <WeatherInfoCard title="Gusts" value={`${displayWeather?.gust ?? "-- "}km/h`} icon={"gusts"}/>
        </div>
      </section>
