@@ -6,15 +6,17 @@ import { WeatherDayCard,  CurrentWeatherInfo, Loader, WeatherInfoCard, WeatherHo
 import { WeatherType } from './types/weather.types';
 import { DailyForecast } from './types/dailyForecast.type';
 import './App.css'
+import moment from 'moment';
 
 function App() {
   const { weather , loading} =  useGetCurrentWeather();
+  console.log("weather", weather)
   const { hourlyWeather, loading:hourlyLoading } =  useGetHourlyWeather();
 
   const {forecast, history, loading:weeklyLoading } = useGetWeeklyWeather();
   const [selectedWeather, setSelectedWeather] = useState<WeatherType | DailyForecast | null>(null);
   
-  const displayWeather = selectedWeather ?? weather;
+  const displayWeather = (selectedWeather ?? weather) as WeatherType;
   const windDirection = displayWeather?.wind_dir ? `rotate-[${displayWeather.wind_dir+100}deg]` : '';
   const chanceOfRain = estimateRainChance(displayWeather?.precip, (displayWeather as WeatherType)?.clouds);
   const isLoading = loading || hourlyLoading || weeklyLoading;
@@ -33,10 +35,10 @@ function App() {
           <WeatherInfoCard title="UV index" value={displayWeather?.uv} icon={"uv"}/>
           <WeatherInfoCard title="Wind" value={`${displayWeather?.wind_spd}km/h`} icon={"wind"} imageClassName={windDirection}/>
           <WeatherInfoCard title="Pressure" value={`${displayWeather?.pres} hPa`} icon={"pressure"}/>
-          <WeatherInfoCard title="Sunrise" value={`${displayWeather?.wind_spd}km/h`} icon={"sunrise"}/>
-          <WeatherInfoCard title="Humidity" value={`${displayWeather?.wind_spd}km/h`} icon={"humidity"}/>
-          <WeatherInfoCard title="Sunset" value={`${displayWeather?.wind_spd}km/h`} icon={"sunset"}/>
-          <WeatherInfoCard title="Gusts" value={`${(displayWeather as WeatherType)?.gust ?? 0}km/h`} icon={"gusts"}/>
+          <WeatherInfoCard title="Sunrise" value={displayWeather.sunrise ?? "--"}  icon={"sunrise"}/>
+          <WeatherInfoCard title="Humidity" value={`${displayWeather?.rh}%`} icon={"humidity"}/>
+          <WeatherInfoCard title="Sunset" value={displayWeather.sunset ?? "--"} icon={"sunset"}/>
+          <WeatherInfoCard title="Gusts" value={`${displayWeather?.gust ?? "-- "}km/h`} icon={"gusts"}/>
        </div>
      </section>
      <section className='mb-8'>
