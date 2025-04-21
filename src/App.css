@@ -1,0 +1,169 @@
+/* Main */
+.main{
+  padding:16px;
+  min-height:100vh;
+  width:1030px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.header{
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.input-container{
+  display: flex;
+  width: 100%;
+  margin-right:20px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.icon-left{
+  position: absolute;
+  justify-content: center;
+  margin: auto 0px;
+  left:18px;
+}
+
+.icon-right{
+  position: absolute;
+  justify-content: center;
+  margin: auto 0px;
+  right:18px;
+}
+
+.search-bar{
+  padding-left:44px;
+}
+
+
+
+/* Wather stats Card */
+.stat-card {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .stat-card {
+    flex: initial;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  border-radius: 40px;
+  padding: 12px;
+}
+
+.stat-contents {
+  display: flex;
+  flex: 1;
+  max-width: 100%;
+  min-width: 80px;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: 12px;
+}
+
+.stat-contents.compact {
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .stat-contents.compact {
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+  }
+}
+
+.stat-title {
+  color: #999;
+  margin-top: 0;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  max-width: calc(100% - 10px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.stat-title.compact {
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  color: #222;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.stat-value.compact {
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .stat-value {
+    font-size: 1.75rem;
+  }
+
+  .stat-value.compact {
+    font-size: 1.25rem;
+  }
+}
+
+
+
+/* Weather Card */
+.hourly-container{
+  columns: 8;
+  justify-content: center;
+}
+
+.weather-card {
+  width: 120px;
+  height: 120px;
+  background-color: #14418D; /* deep blue */
+  border-radius: 16px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.weather-card .time {
+  font-size: 14px;
+  margin: 0;
+}
+
+.weather-card .icon {
+  font-size: 32px;
+  color: #ffca28; /* sun yellow */
+}
+
+.weather-card .temp {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}

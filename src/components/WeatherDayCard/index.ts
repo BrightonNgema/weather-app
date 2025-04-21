@@ -1,0 +1,1 @@
+export { WeatherDayCard } from './WeatherDayCard.component'

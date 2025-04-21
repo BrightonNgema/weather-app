@@ -1,0 +1,1 @@
+export { CurrentWeatherInfo } from './CurrentWeatherInfo.component'
