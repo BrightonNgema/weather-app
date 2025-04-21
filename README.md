@@ -5,6 +5,7 @@ A sleek and responsive weather dashboard built with **React**, **Vite**, and **T
 ## 🔗 Live Preview
 
 Check out the live demo: [https://weather-app-dusky-seven-79.vercel.app/](https://weather-app-dusky-seven-79.vercel.app/)
+
 ---
 
 ## 🚀 Features
@@ -13,7 +14,7 @@ Check out the live demo: [https://weather-app-dusky-seven-79.vercel.app/](https:
   Shows live conditions: temperature, UV index, wind speed/direction, pressure, humidity, and more.
 
 - **Hourly Forecast**  
-  Displays the next 24 hours of weather using hourly snapshots.
+  Displays the next 8 hours of weather using hourly snapshots.
 
 - **3-Day Forecast**  
   Provides an interactive summary of the upcoming week’s weather.
@@ -54,7 +55,7 @@ cd weather-app
 ### 2. Install dependencies
 
 ```bash
-npm install
+yarn install
 ```
 
 ### 3. Configure environment variables
@@ -67,14 +68,14 @@ VITE_BASE_URL=https://api.weatherbit.io/v2.0/
 ```
 
 > - `VITE_WEATHER_API_KEY`: Your API key from a weather provider (e.g. Weatherbit, OpenWeather).
-> - `VITE_BASE_URL`: The base URL of the API service you are using (e.g., `https://api.weatherbit.io/v2.0`).
+> - `VITE_BASE_URL`: The base URL of the API service you are using (e.g.`https://api.weatherbit.io/v2.0`).
 
 ---
 
 ## 🔧 Running the App Locally
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 Visit [http://localhost:5173](http://localhost:5173) to view the app.
@@ -84,7 +85,7 @@ Visit [http://localhost:5173](http://localhost:5173) to view the app.
 ## 🧪 Running Tests
 
 ```bash
-npm run test
+yarn test
 ```
 
 Includes unit tests for:
@@ -112,28 +113,11 @@ Includes unit tests for:
 
 ---
 
-## ☁️ Deployment
-
-### 🚀 Vercel
-
-1. Push your code to GitHub
-2. Connect the repo on [vercel.com](https://vercel.com)
-3. Set your environment variables in **Project Settings → Environment Variables**
-4. Deploy!
-
-No manual configuration needed — Vercel auto-detects Vite projects.
-
----
-
-## 🔮 Roadmap
+## 🔮 Nice to have features
 
 - 🌙 Dark mode toggle  
 - 🌍 Multi-language support (i18n)  
 - 📍 City search and location-based results  
-- 📡 Offline support with service workers  
+- ❤️ Store favourite cities
 
 ---
-
-## 📄 License
-
-MIT License © [Your Name or Organization]
