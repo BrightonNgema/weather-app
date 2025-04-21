@@ -17,7 +17,7 @@ interface LocationStore {
 export const useLocationStore = create<LocationStore>((set) => ({
   location: {
     latitude: null,
-    longitude: null,
+    longitude:null,
   },
   setLocation: (location) => set({ location }),
   fetchCurrentLocation: () => {
@@ -25,7 +25,6 @@ export const useLocationStore = create<LocationStore>((set) => ({
       console.error('Geolocation is not supported by this browser.');
       return;
     }
-
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords;
@@ -37,6 +36,13 @@ export const useLocationStore = create<LocationStore>((set) => ({
         });
       },
       (error) => {
+         set({
+          location: {
+           latitude: -26.2041,
+            longitude: 28.0473,
+          },
+        });
+         
         console.error('Error getting location:', error);
       }
     );
